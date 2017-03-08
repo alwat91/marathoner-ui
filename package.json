@@ -1,0 +1,25 @@
+{
+  "name": "marathoner-ui",
+  "version": "1.0.0",
+  "description": "This is a lightweight app for keeping track of runs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alwat91/marathoner-ui.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alwat91/marathoner-ui/issues"
+  },
+  "homepage": "https://github.com/alwat91/marathoner-ui#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "morgan": "^1.8.1"
+  }
+}
