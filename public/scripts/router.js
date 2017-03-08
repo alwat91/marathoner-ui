@@ -6,9 +6,9 @@ function MarathonerRouter($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
-    .state('runs', {
-      url: '/runs',
-      templateUrl: '/partials/runs.html'
+    .state('home', {
+      url: '/home',
+      templateUrl: '/partials/home.html'
     })
     .state('edit_run', {
       url: '/edit_run',

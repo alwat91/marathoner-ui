@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="marathonerApp">
   <head>
     <meta charset="utf-8">
     <title>Marathoner</title>
+
+    <!--Angular-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+    <!-- UI-router -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+    <!--Router-->
+    <script type="text/javascript" src="scripts/router.js"></script>
+    <!-- Controllers -->
+    <script type="text/javascript" src="scripts/controllers/home_controller.js">
+
+    </script>
+    <!-- App -->
+    <script type="text/javascript" src="scripts/app.js"></script>
+
   </head>
-  <body>
-    TEST
+  <body ng-controller="HomeController as home">
+    <a ui-sref="edit_run">Edit run</a>
+    {{1+1}}
+    <ui-view>
+    </ui-view>
   </body>
 </html>
