@@ -1,1 +1,24 @@
-HOME
+<div>
+  <h1>Welcome to Marathoner!</h1>
+  <p>Marathoner is a lightweight running app dedicated to one thing only: tracking your runs! No worrying about GPS connections, just sign up and record your times.</p>
+  <button ui-sref="sign_up" type="button" name="sign_up">Sign Up</button>
+  <button ui-sref="login" type="button" name="login">Login</button>
+</div>
+
+<div>
+  <button ui-sref="new_run" type="button" name="new_run">Start running now!</button>
+  <div>
+    <h2>Run on </h2>
+      <div>
+        You ran {{}} miles
+        Duration: {{}} minutes
+        Starting time: {{}}
+        Ending time: {{}}
+        <button ui-sref="edit_run" type="button" name="edit_run">Edit</button>
+        <button ui-sref="delete_run" type="button" name="delete_run">Delete</button>
+      </div>
+  </div>
+  <div>
+    Graph goes here
+  </div>
+</div>
