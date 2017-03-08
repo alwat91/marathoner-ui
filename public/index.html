@@ -16,12 +16,24 @@
     </script>
     <!-- App -->
     <script type="text/javascript" src="scripts/app.js"></script>
-
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
   </head>
   <body ng-controller="HomeController as home">
-    <a ui-sref="edit_run">Edit run</a>
-    {{1+1}}
+
+    <nav>
+      <a href="#"><i class="material-icons">directions_run</i> Marathoner</a>
+      <ul>
+        <li><a href="#" ui-sref="index">Home</a></li>
+        <li><a href="#" ui-sref="sign_up">Sign Up</a></li>
+        <li><a href="#" ui-sref="login">Log In</a></li>
+        <li><a href="#" ui-sref="about">About</a></li>
+      </ul>
+    </nav>
+
     <ui-view>
     </ui-view>
+
   </body>
 </html>
