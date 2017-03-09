@@ -10,10 +10,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
     <!--Router-->
     <script type="text/javascript" src="scripts/router.js"></script>
+    <!-- Factories -->
+    <script type="text/javascript" src="scripts/factories/auth_interceptor.js"></script>
+    <script type="text/javascript" src="scripts/factories/auth_token_factory.js"></script>
     <!-- Controllers -->
-    <script type="text/javascript" src="scripts/controllers/home_controller.js">
-
-    </script>
+    <script type="text/javascript" src="scripts/controllers/home_controller.js"></script>
+    <script type="text/javascript" src="scripts/controllers/auth_controller.js"></script>
     <!-- App -->
     <script type="text/javascript" src="scripts/app.js"></script>
     <!-- Icons -->
@@ -23,7 +25,7 @@
   </head>
   <body ng-controller="HomeController as home">
 
-    <nav>
+    <nav ng-controller="AuthController as auth">
       <a href="#"><i class="material-icons">directions_run</i> Marathoner</a>
       <ul>
         <li><a href="#" ui-sref="index">Home</a></li>
