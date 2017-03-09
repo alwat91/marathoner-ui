@@ -6,7 +6,8 @@ function RunsController($http, $state, $scope){
     $http.get(`${server}/users/${$scope.currentUser.id}/runs`)
       .then(function(res){
           self.allRuns = res.data.runs
-          parseRuns()
+          parseRuns();
+          buildChart();
           })
   }
   self.getRuns = getRuns;
@@ -38,6 +39,7 @@ function RunsController($http, $state, $scope){
         self.allRuns = res.data.runs;
         parseRuns();
         $state.go('index');
+        buildChart();
       })
   }
   self.createRun = createRun;
@@ -72,4 +74,31 @@ function RunsController($http, $state, $scope){
     return new Date();
   }
   self.now = now;
+
+  function buildChart(){
+    var ctx = $("#myChart");
+    var mileageData = [];
+    var dates = [];
+
+    self.allRuns.forEach(function(run){
+      mileageData.push(run.mileage);
+      dates.push(`${run.beginning_time.getMonth()}/${run.beginning_time.getDate()}`);
+    })
+
+      var data = {
+      labels: dates,
+      datasets: [{
+              label: "Runs",
+              data: mileageData,
+              }]
+      };
+
+    var runsChart = new Chart(ctx, {
+      type: 'line',
+      data: data,
+      options: {
+        responsive: true
+      }
+    });
+  }
 }
