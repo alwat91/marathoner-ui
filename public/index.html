@@ -30,6 +30,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
     <!-- charts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <!-- Style Scripts -->
+    <script type="text/javascript" src="scripts/style.js">
+
+    </script>
     <!-- Main css -->
     <link rel="stylesheet" href="/styles/main.css">
   </head>
@@ -37,8 +41,16 @@
 
     <nav ng-controller="AuthController as auth">
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo"><i class="material-icons runner-logo">directions_run</i> Marathoner</a>
-        <ul class="right hide-on-med">
+        <a href="#" class="brand-logo"><i id="runner-logo" class="material-icons">directions_run</i> Marathoner</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#" ui-sref="index">Home</a></li>
+          <li ng-if="!home.currentUser"><a href="#" ui-sref="sign_up">Sign Up</a></li>
+          <li ng-if="!home.currentUser"><a href="#" ui-sref="login">Log In</a></li>
+          <li ng-if="home.currentUser"><a href="#" ng-click="auth.logout()">Logout</a></li>
+          <li><a href="#" ui-sref="about">About</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
           <li><a href="#" ui-sref="index">Home</a></li>
           <li ng-if="!home.currentUser"><a href="#" ui-sref="sign_up">Sign Up</a></li>
           <li ng-if="!home.currentUser"><a href="#" ui-sref="login">Log In</a></li>
