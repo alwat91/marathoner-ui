@@ -8,16 +8,15 @@
 <div ng-if="home.currentUser" ng-controller="RunsController as runs">
   <button ui-sref="new_run" type="button" name="new_run">Start running now!</button>
   <div ng-repeat="run in runs.allRuns">
-    {{run}}
-    <h2>Run on </h2>
-      <div>
-        You ran {{}} miles
-        Duration: {{}} minutes
-        Starting time: {{}}
-        Ending time: {{}}
+    <h2>Run on {{run.date}}</h2>
+      <ul>
+        <li>You ran {{run.mileage}} miles</li>
+        <li>Duration: {{run.duration_in_secs / 60}} minutes {{run.duration_in_secs % 60}} seconds</li>
+        <li>Starting time: {{run.beginning_time}}</li>
+        <li>Ending time: {{run.end_time}}</li>
         <button ui-sref="edit_run" type="button" name="edit_run">Edit</button>
         <button ui-sref="delete_run" type="button" name="delete_run">Delete</button>
-      </div>
+      </ul>
   </div>
   <div>
     Graph goes here
