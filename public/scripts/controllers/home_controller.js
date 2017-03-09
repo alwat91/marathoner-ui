@@ -3,10 +3,12 @@ function HomeController($scope, $http) {
 
   $scope.$on('userLoggedIn', function(event, data){
     self.currentUser = data;
+    $scope.currentUser = data;
   });
 
   $scope.$on('userLoggedOut', function(event, data){
     self.currentUser = null;
+    $scope.currentUser = null;
   });
 
 }

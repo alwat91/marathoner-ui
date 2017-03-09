@@ -1,5 +1,10 @@
 angular.module('marathonerApp', ['ui.router'])
-  .config(MarathonerRouter);
+  .config(MarathonerRouter)
+  .config(authInterceptor);
+
+  function authInterceptor($httpProvider) {
+    $httpProvider.interceptors.push('AuthInterceptor')
+  }
 
 function MarathonerRouter($stateProvider, $urlRouterProvider){
 

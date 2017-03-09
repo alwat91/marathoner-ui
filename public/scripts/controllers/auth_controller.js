@@ -1,6 +1,6 @@
 function AuthController($http, $state, $scope, $rootScope, AuthTokenFactory) {
   var self = this;
-  var server = 'https://boiling-escarpment-86244.herokuapp.com'
+  var server = 'http://localhost:3000';
 
   function signup(user) {
     $http.post(`${server}/users`, { user: user })

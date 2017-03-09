@@ -1,5 +1,6 @@
 angular.module('marathonerApp')
   .controller('HomeController', HomeController)
+  .controller('AuthController', AuthController)
+  .controller('RunsController', RunsController)
   .factory('AuthTokenFactory', AuthTokenFactory)
   .factory('AuthInterceptor', AuthInterceptor)
-  .controller('AuthController', AuthController)
