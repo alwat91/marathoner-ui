@@ -1,6 +1,6 @@
 function RunsController($http, $state, $scope){
   var self = this;
-    var server = 'http://localhost:3000';
+  var server = 'http://localhost:3000';
 
   function getRuns(){
     $http.get(`${server}/users/${$scope.currentUser.id}/runs`)
@@ -17,7 +17,8 @@ function RunsController($http, $state, $scope){
 
     $http.put(`${server}/users/${$scope.currentUser.id}/runs/${run.id}`, run)
       .then(function(res){
-        console.log(res);
+        self.allRuns = res.data.runs;
+        $state.go('index');
       })
   }
   self.editRun = editRun;
@@ -66,4 +67,9 @@ function RunsController($http, $state, $scope){
     $state.go('edit_run');
   }
   self.goEdit = goEdit;
+
+  function now(){
+    return new Date();
+  }
+  self.now = now;
 }
