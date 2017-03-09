@@ -1,8 +1,17 @@
 <div ng-if="!home.currentUser" class="container">
-  <h1>Welcome to Marathoner!</h1>
-  <p>Marathoner is a lightweight running app dedicated to one thing only: tracking your runs! No worrying about GPS connections, just sign up and record your times.</p>
-  <button ui-sref="sign_up" type="button" name="sign_up">Sign Up</button>
-  <button ui-sref="login" type="button" name="login">Login</button>
+  <div class="card large">
+    <div class="card-image">
+      <img class="responsive-img" src="img/runner.jpg" alt="Runner">
+      <span class="card-title">Welcome to Marathoner!</span>
+    </div>
+    <div class="card-content">
+      <p>Marathoner is a lightweight running app dedicated to one thing only: tracking your runs! No worrying about GPS connections, just sign up and record your times.</p>
+    </div>
+    <div class="card-action">
+      <button class="waves-effect waves-light orange btn" ui-sref="sign_up" type="button" name="sign_up">Sign Up</button>
+      <button class="waves-effect waves-light orange btn" ui-sref="login" type="button" name="login">Login</button>
+    </div>
+  </div>
 </div>
 
 <div ng-if="home.currentUser" ng-controller="RunsController as runs">
