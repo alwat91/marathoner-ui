@@ -11,4 +11,8 @@ function HomeController($scope, $http) {
     $scope.currentUser = null;
   });
 
+  $scope.$on('editingRun', function(event, data){
+    self.editingRun = data;
+  });
+
 }

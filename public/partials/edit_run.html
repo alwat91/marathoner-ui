@@ -1,15 +1,21 @@
-<h1>Edit Run</h1>
-<h3>Enter the changes you wish to make to your run</h3>
+<div ng-controller="RunsController as runs">
 
-<form>
-  <label for="date">Date of run</label>
-  <input type="date" name="" value="">
-  <label for="beginning_time">Beginning time:</label>
-  <input type="time" name="" value="">
-  <button type="button" name="now">Now</button>
-  <label for="ending_time">Ending time:</label>
-  <input type="time" name="" value="">
-  <button type="button" name="now">Now</button>
-  <button type="submit" name="button">Submit</button>
-</form>
-<p>Tip: Select the "NOW" button to set the time to the current time.</p>
+  <h1>Edit Run</h1>
+  <h3>Enter the changes you wish to make to your run</h3>
+  {{home.editingRun}}
+  <form ng-submit="runs.editRun(run)">
+    <label for="date">Date of run</label>
+    <input ng-model="home.editingRun.beginning_time" type="date">
+    <label for="beginning_time">Beginning time:</label>
+    <input ng-model="home.editingRun.beginning_time" type="time" step="1">
+    <button type="button" name="now">Now</button>
+    <label for="ending_time">Ending time:</label>
+    <input ng-model="home.editingRun.end_time" type="time" step="1" placeholder="{{home.editingRun.end_time}}">
+    <label for="mileage">Miles run:</label>
+    <input type="number" step="0.01" ng-model="run.mileage" value="{{home.editingRun.mileage}}">
+    <button type="button" name="now">Now</button>
+    <button type="submit" name="button">Submit</button>
+  </form>
+  <p>Tip: Select the "NOW" button to set the time to the current time.</p>
+
+</div>
