@@ -6,10 +6,10 @@
     <label for="date">Date of run</label>
     <input ng-model="home.editingRun.beginning_time" type="date">
     <label for="beginning_time">Beginning time:</label>
-    <input ng-model="home.editingRun.beginning_time" type="time" step="1">
+    <input ng-model="home.editingRun.beginning_time" type="time" step=".1">
     <button ng-click="home.editingRun.beginning_time = runs.now()" type="button" name="now">Now</button>
     <label for="ending_time">Ending time:</label>
-    <input ng-model="home.editingRun.end_time" type="time" step="1" placeholder="{{home.editingRun.end_time}}">
+    <input ng-model="home.editingRun.end_time" type="time" step=".1" placeholder="{{home.editingRun.end_time}}">
     <button ng-click="home.editingRun.end_time = runs.now()" type="button" name="now">Now</button>
     <label for="mileage">Miles run:</label>
     <input type="number" step="0.01" ng-model="home.editingRun.mileage" value="{{home.editingRun.mileage}}">
