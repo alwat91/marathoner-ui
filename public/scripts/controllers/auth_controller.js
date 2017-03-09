@@ -21,4 +21,10 @@ function AuthController($http, $state, $scope, $rootScope, AuthTokenFactory) {
   }
   self.login = login;
 
+  function logout() {
+    $scope.$emit('userLoggedOut');
+    $state.go('index');
+  }
+  self.logout = logout;
+
 }

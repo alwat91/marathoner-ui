@@ -29,8 +29,9 @@
       <a href="#"><i class="material-icons">directions_run</i> Marathoner</a>
       <ul>
         <li><a href="#" ui-sref="index">Home</a></li>
-        <li><a href="#" ui-sref="sign_up">Sign Up</a></li>
-        <li><a href="#" ui-sref="login">Log In</a></li>
+        <li ng-if="!home.currentUser"><a href="#" ui-sref="sign_up">Sign Up</a></li>
+        <li ng-if="!home.currentUser"><a href="#" ui-sref="login">Log In</a></li>
+        <li ng-if="home.currentUser"><a href="#" ng-click="auth.logout()">Logout</a></li>
         <li><a href="#" ui-sref="about">About</a></li>
       </ul>
     </nav>
