@@ -30,4 +30,21 @@ function RunsController($http, $state, $scope){
     })
   }
   self.deleteRun = deleteRun;
+
+  function createRun(run){
+    run.beginning_time.setFullYear(run.date.getFullYear());
+    run.beginning_time.setDate(run.date.getDate());
+    run.beginning_time.setMonth(run.date.getMonth());
+
+    run.end_time.setFullYear(run.date.getFullYear());
+    run.end_time.setDate(run.date.getDate());
+    run.end_time.setMonth(run.date.getMonth());
+
+    $http.post(`${server}/users/${$scope.currentUser.id}/runs`, run)
+      .then(function(res){
+        self.allRuns = res.data.runs;
+        $state.go('index');
+      })
+  }
+  self.createRun = createRun;
 }
