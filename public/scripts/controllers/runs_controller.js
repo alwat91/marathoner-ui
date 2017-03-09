@@ -17,4 +17,17 @@ function RunsController($http, $state, $scope){
   }
   self.getRuns = getRuns;
   getRuns();
+
+  function editRun(run){
+
+  }
+  self.editRun = editRun;
+
+  function deleteRun(run){
+    $http.delete(`${server}/users/${$scope.currentUser.id}/runs/${run.id}`)
+    .then(function(res){
+      $state.reload();
+    })
+  }
+  self.deleteRun = deleteRun;
 }

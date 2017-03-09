@@ -14,8 +14,8 @@
         <li>Duration: {{run.duration_in_secs / 60}} minutes {{run.duration_in_secs % 60}} seconds</li>
         <li>Starting time: {{run.beginning_time}}</li>
         <li>Ending time: {{run.end_time}}</li>
-        <button ui-sref="edit_run" type="button" name="edit_run">Edit</button>
-        <button ui-sref="delete_run" type="button" name="delete_run">Delete</button>
+        <button ng-click="runs.editRun(run)" type="button" name="edit_run">Edit</button>
+        <button ng-click="runs.deleteRun(run)" type="button" name="delete_run">Delete</button>
       </ul>
   </div>
   <div>
