@@ -14,29 +14,31 @@
   </div>
 </div>
 
-<div class="row" ng-if="home.currentUser" ng-controller="RunsController as runs">
-  <div class="col s12 m6 l5">
-    <ul class="collapsible" data-collapsible="accordion">
-      <li ng-repeat="run in runs.allRuns">
-        <div class="collapsible-header">Run on {{run.beginning_time | date:'mediumDate'}}</div>
-        <div class="collapsible-body">
-          <ul>
-            <li>You ran {{run.mileage}} miles</li>
-            <li>Duration: {{(run.duration_in_secs / 60) | number: 0}} minutes {{run.duration_in_secs % 60}} seconds</li>
-            <li>Starting time: {{run.beginning_time | date:'mediumTime'}}</li>
-            <li>Ending time: {{run.end_time | date:'mediumTime'}}</li>
-            <button class="waves-effect waves-light btn" ng-click="runs.goEdit(run)" type="button" name="edit_run">Edit</button>
-            <button class="waves-effect waves-light red btn" ng-click="runs.deleteRun(run)" type="button" name="delete_run">Delete</button>
-          </ul>
-        </div>
-      </li>
-    </ul>
-  </div>
-
-  <div class="row">
-    <div class="col s12 m6 l5">
-      <canvas id="myChart" width="100" height="100"></canvas>
+  <div class="row" ng-if="home.currentUser" ng-controller="RunsController as runs">
+    <div class="col s12 m6 l5 offset-m1 offset-l1">
+      <ul class="collapsible" data-collapsible="accordion">
+        <li ng-repeat="run in runs.allRuns">
+          <div class="collapsible-header">Run on {{run.beginning_time | date:'mediumDate'}}</div>
+          <div class="collapsible-body">
+            <ul>
+              <li>You ran {{run.mileage}} miles</li>
+              <li>Duration: {{(run.duration_in_secs / 60) | number: 0}} minutes {{run.duration_in_secs % 60}} seconds</li>
+              <li>Starting time: {{run.beginning_time | date:'mediumTime'}}</li>
+              <li>Ending time: {{run.end_time | date:'mediumTime'}}</li>
+              <button class="waves-effect waves-light btn" ng-click="runs.goEdit(run)" type="button" name="edit_run">Edit</button>
+              <button class="waves-effect waves-light red btn" ng-click="runs.deleteRun(run)" type="button" name="delete_run">Delete</button>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      <div class="container">
+        <button class="waves-effect waves-light btn" ui-sref="new_run" type="button" name="new_run">Start running now!</button>
+      </div>
     </div>
-  </div>
-  <button class="waves-effect waves-light btn" ui-sref="new_run" type="button" name="new_run">Start running now!</button>
+    <div class="row
+    ">
+      <div class="col s12 m6 l5 push-l1">
+        <canvas id="myChart" width="100" height="100"></canvas>
+      </div>
+    </div>
 </div>
