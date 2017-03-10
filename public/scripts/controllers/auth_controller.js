@@ -3,9 +3,10 @@ function AuthController($http, $state, $scope, $rootScope, AuthTokenFactory) {
   var server = 'https://boiling-escarpment-86244.herokuapp.com';
 
   function signup(user) {
+    console.log(user);
     $http.post(`${server}/users`, { user: user })
     .then(function(res){
-      $state.go('index');
+      self.login(user);
     })
   }
   self.signup = signup;

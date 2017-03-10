@@ -54,6 +54,12 @@ function RunsController($http, $state, $scope){
   }
 
   function reqHelper(run){
+    run.date = new Date(run.beginning_time)
+
+    run.beginning_time = new Date(run.beginning_time)
+    run.end_time = new Date(run.end_time)
+
+
     run.beginning_time.setFullYear(run.date.getFullYear());
     run.beginning_time.setDate(run.date.getDate());
     run.beginning_time.setMonth(run.date.getMonth());
@@ -88,8 +94,12 @@ function RunsController($http, $state, $scope){
       var data = {
       labels: dates,
       datasets: [{
-              label: "Runs",
+              label: "Latest Runs",
               data: mileageData,
+              backgroundColor: "rgba(14, 151, 225, 0.4)",
+              borderColor: "rgb(58, 163, 211)",
+              pointBackgroundColor: "#fff",
+              pointBorderColor: "rgba(75,192,192,1)"
               }]
       };
 
@@ -97,7 +107,21 @@ function RunsController($http, $state, $scope){
       type: 'line',
       data: data,
       options: {
-        responsive: true
+        responsive: true,
+        scales: {
+          yAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: 'Mileage'
+            }
+          }],
+          xAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: 'Date of Run'
+            }
+          }]
+        }
       }
     });
   }

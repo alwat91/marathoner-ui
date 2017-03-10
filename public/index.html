@@ -4,8 +4,12 @@
     <meta charset="utf-8">
     <title>Marathoner</title>
 
-    <!--Angular-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+    <!-- JavaScript for: jQuery, angular, materialize, and angular-materialize. All of which are needed. -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.2/angular-materialize.min.js"></script>
+
     <!-- UI-router -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
     <!--Router-->
@@ -23,22 +27,41 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <script src="https://use.fontawesome.com/0f903be246.js"></script>
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Materialize -->
+    <!-- Materialize CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+
     <!-- charts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <!-- Style Scripts -->
+    <script type="text/javascript" src="scripts/style.js">
+
+    </script>
+    <!-- Main css -->
+    <link rel="stylesheet" href="/styles/main.css">
   </head>
   <body ng-controller="HomeController as home">
 
     <nav ng-controller="AuthController as auth">
-      <a href="#"><i class="material-icons">directions_run</i> Marathoner</a>
-      <ul>
-        <li><a href="#" ui-sref="index">Home</a></li>
-        <li ng-if="!home.currentUser"><a href="#" ui-sref="sign_up">Sign Up</a></li>
-        <li ng-if="!home.currentUser"><a href="#" ui-sref="login">Log In</a></li>
-        <li ng-if="home.currentUser"><a href="#" ng-click="auth.logout()">Logout</a></li>
-        <li><a href="#" ui-sref="about">About</a></li>
-      </ul>
+      <div class="nav-wrapper light-blue">
+        <a href="#" class="brand-logo"><i id="runner-logo" class="material-icons">directions_run</i> Marathoner</a>
+        <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#" ui-sref="index">Home</a></li>
+          <li ng-if="!home.currentUser"><a href="#" ui-sref="sign_up">Sign Up</a></li>
+          <li ng-if="!home.currentUser"><a href="#" ui-sref="login">Log In</a></li>
+          <li ng-if="home.currentUser"><a href="#" ng-click="auth.logout()">Logout</a></li>
+          <li><a href="#" ui-sref="about">About</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-menu">
+          <li><a href="#" ui-sref="index">Home</a></li>
+          <li ng-if="!home.currentUser"><a href="#" ui-sref="sign_up">Sign Up</a></li>
+          <li ng-if="!home.currentUser"><a href="#" ui-sref="login">Log In</a></li>
+          <li ng-if="home.currentUser"><a href="#" ng-click="auth.logout()">Logout</a></li>
+          <li><a href="#" ui-sref="about">About</a></li>
+        </ul>
+      </div>
     </nav>
 
     <ui-view>

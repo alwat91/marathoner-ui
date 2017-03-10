@@ -1,4 +1,4 @@
-angular.module('marathonerApp', ['ui.router'])
+angular.module('marathonerApp', ['ui.router', 'ui.materialize'])
   .config(MarathonerRouter)
   .config(authInterceptor);
 
