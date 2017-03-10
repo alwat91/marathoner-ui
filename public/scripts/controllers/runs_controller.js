@@ -88,8 +88,12 @@ function RunsController($http, $state, $scope){
       var data = {
       labels: dates,
       datasets: [{
-              label: "Runs",
+              label: "Latest Runs",
               data: mileageData,
+              backgroundColor: "rgba(14, 151, 225, 0.4)",
+              borderColor: "rgb(58, 163, 211)",
+              pointBackgroundColor: "#fff",
+              pointBorderColor: "rgba(75,192,192,1)"
               }]
       };
 
@@ -97,7 +101,21 @@ function RunsController($http, $state, $scope){
       type: 'line',
       data: data,
       options: {
-        responsive: true
+        responsive: true,
+        scales: {
+          yAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: 'Mileage'
+            }
+          }],
+          xAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: 'Date of Run'
+            }
+          }]
+        }
       }
     });
   }
