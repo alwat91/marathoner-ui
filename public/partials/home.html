@@ -1,24 +1,44 @@
-<div ng-if="!home.currentUser">
-  <h1>Welcome to Marathoner!</h1>
-  <p>Marathoner is a lightweight running app dedicated to one thing only: tracking your runs! No worrying about GPS connections, just sign up and record your times.</p>
-  <button ui-sref="sign_up" type="button" name="sign_up">Sign Up</button>
-  <button ui-sref="login" type="button" name="login">Login</button>
+<div ng-if="!home.currentUser" class="container">
+  <div class="card large">
+    <div class="card-image">
+      <img class="responsive-img" src="img/runner.jpg" alt="Runner">
+      <span class="card-title">Welcome to Marathoner!</span>
+    </div>
+    <div class="card-content">
+      <p>Marathoner is a lightweight running app dedicated to one thing only: tracking your runs! No worrying about GPS connections, just sign up and record your times.</p>
+    </div>
+    <div class="card-action">
+      <button class="waves-effect waves-light orange btn" ui-sref="sign_up" type="button" name="sign_up">Sign Up</button>
+      <button class="waves-effect waves-light orange btn" ui-sref="login" type="button" name="login">Login</button>
+    </div>
+  </div>
 </div>
 
-<div ng-if="home.currentUser" ng-controller="RunsController as runs">
-  <button ui-sref="new_run" type="button" name="new_run">Start running now!</button>
-  <div ng-repeat="run in runs.allRuns">
-    <h2>Run on {{run.beginning_time | date:'mediumDate'}}</h2>
-      <ul>
-        <li>You ran {{run.mileage}} miles</li>
-        <li>Duration: {{(run.duration_in_secs / 60) | number: 0}} minutes {{run.duration_in_secs % 60}} seconds</li>
-        <li>Starting time: {{run.beginning_time | date:'mediumTime'}}</li>
-        <li>Ending time: {{run.end_time | date:'mediumTime'}}</li>
-        <button ng-click="runs.goEdit(run)" type="button" name="edit_run">Edit</button>
-        <button ng-click="runs.deleteRun(run)" type="button" name="delete_run">Delete</button>
+  <div class="row" ng-if="home.currentUser" ng-controller="RunsController as runs">
+    <div class="col s12 m6 l5 offset-m1 offset-l1">
+      <ul class="collapsible" data-collapsible="accordion">
+        <li ng-repeat="run in runs.allRuns">
+          <div class="collapsible-header">Run on {{run.beginning_time | date:'mediumDate'}}</div>
+          <div class="collapsible-body">
+            <ul>
+              <li>You ran {{run.mileage}} miles</li>
+              <li>Duration: {{(run.duration_in_secs / 60) | number: 0}} minutes {{run.duration_in_secs % 60}} seconds</li>
+              <li>Starting time: {{run.beginning_time | date:'mediumTime'}}</li>
+              <li>Ending time: {{run.end_time | date:'mediumTime'}}</li>
+              <button class="waves-effect waves-light btn" ng-click="runs.goEdit(run)" type="button" name="edit_run">Edit</button>
+              <button class="waves-effect waves-light red btn" ng-click="runs.deleteRun(run)" type="button" name="delete_run">Delete</button>
+            </ul>
+          </div>
+        </li>
       </ul>
-  </div>
-  <div>
-    <canvas id="myChart" width="100" height="100"></canvas>
-  </div>
+      <div class="container">
+        <button class="waves-effect waves-light btn" ui-sref="new_run" type="button" name="new_run">Start running now!</button>
+      </div>
+    </div>
+    <div class="row
+    ">
+      <div class="col s12 m6 l5">
+        <canvas id="myChart" width="100" height="100"></canvas>
+      </div>
+    </div>
 </div>

@@ -1,12 +1,21 @@
-<div ng-controller="AuthController as auth">
-  Sign in to your account
+<div ng-controller="AuthController as auth" class="row">
+  <div class="col l6 push-l3 m8 push-m2 s12">
 
-  <form ng-submit="auth.login(user)">
-    <label for="email">Email:</label>
-    <input ng-model="user.email" type="email">
-    <label for="password">Password: </label>
-    <input ng-model="user.password" type="password">
-    <input type="submit">
-  </form>
+    <h4 class="center">Sign in to your account</h4>
+
+    <form ng-submit="auth.login(user)">
+      <div class="input-field">
+        <label for="email">Email:</label>
+        <input class="validate" ng-model="user.email" type="email">
+      </div>
+      <div class="input-field">
+        <label for="password">Password: </label>
+        <input ng-model="user.password" type="password">
+      </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
+  </div>
 
 </div>
