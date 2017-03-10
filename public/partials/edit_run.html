@@ -4,7 +4,7 @@
   <h3>Enter the changes you wish to make to your run</h3>
   <form ng-submit="runs.editRun(home.editingRun)">
     <label for="date">Date of run</label>
-    <input ng-model="home.editingRun.beginning_time" type="date">
+    <input input-date ng-model="home.editingRun.beginning_time" type="text">
     <label for="beginning_time">Beginning time:</label>
     <input ng-model="home.editingRun.beginning_time" type="time" step=".1">
     <button ng-click="home.editingRun.beginning_time = runs.now()" type="button" name="now">Now</button>
