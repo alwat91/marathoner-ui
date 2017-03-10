@@ -1,6 +1,6 @@
 function RunsController($http, $state, $scope){
   var self = this;
-  var server = 'http://localhost:3000';
+  var server = 'https://boiling-escarpment-86244.herokuapp.com';
 
   function getRuns(){
     $http.get(`${server}/users/${$scope.currentUser.id}/runs`)
