@@ -1,20 +1,22 @@
-<div ng-controller="RunsController as runs">
+<div ng-controller="RunsController as runs" class="container">
 
   <h1>New Run</h1>
   <h3>Enter the details for your run</h3>
 
   <form ng-submit="runs.createRun(run)">
     <label for="date">Date of run</label>
-    <input ng-model="run.date" type="date" name="" value="">
+    <input input-date ng-model="run.date" type="text">
     <label for="beginning_time">Beginning time:</label>
     <input ng-model="run.beginning_time" type="time" step=".1">
-    <button ng-click="run.beginning_time = runs.now()" type="button" name="now">Now</button>
+    <button class="btn waves-effect waves-light" ng-click="run.beginning_time = runs.now()" type="button" name="now">Now</button>
     <label for="ending_time">Ending time:</label>
     <input ng-model="run.end_time" type="time" step=".1">
-    <button ng-click="run.end_time = runs.now()" type="button" name="now">Now</button>
+    <button class="btn waves-effect waves-light" ng-click="run.end_time = runs.now()" type="button" name="now">Now</button>
     <label for="mileage">Miles run:</label>
     <input type="number" step="0.01" ng-model="run.mileage">
-    <button type="submit" name="button">Submit</button>
+    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+      <i class="material-icons right">send</i>
+    </button>
   </form>
   <p>Tip: Select the "NOW" button to set the time to the current time.</p>
 
