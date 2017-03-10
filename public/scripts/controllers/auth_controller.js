@@ -3,6 +3,7 @@ function AuthController($http, $state, $scope, $rootScope, AuthTokenFactory) {
   var server = 'http://localhost:3000';
 
   function signup(user) {
+    console.log(user);
     $http.post(`${server}/users`, { user: user })
     .then(function(res){
       $state.go('index');
