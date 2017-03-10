@@ -77,7 +77,9 @@ function RunsController($http, $state, $scope){
   self.goEdit = goEdit;
 
   function now(){
-    return new Date();
+    var now = new Date();
+    now.setMilliseconds(0);
+    return now;
   }
   self.now = now;
 
