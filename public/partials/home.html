@@ -16,7 +16,7 @@
 
 <div ng-if="home.currentUser" ng-controller="RunsController as runs">
   <button ui-sref="new_run" type="button" name="new_run">Start running now!</button>
-  <ul class="collapsible" data-collapsible="accordion" watch>
+  <ul class="collapsible" data-collapsible="accordion">
     <li ng-repeat="run in runs.allRuns">
       <div class="collapsible-header">Run on {{run.beginning_time | date:'mediumDate'}}</div>
       <div class="collapsible-body">
