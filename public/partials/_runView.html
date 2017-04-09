@@ -1,0 +1,13 @@
+<li>
+  <div class="collapsible-header">Run on {{run.beginning_time | date:'mediumDate'}}</div>
+  <div class="collapsible-body">
+    <ul>
+      <li>You ran {{run.mileage}} miles</li>
+      <li>Duration: {{(run.duration_in_secs / 60) | number: 0}} minutes {{run.duration_in_secs % 60}} seconds</li>
+      <li>Starting time: {{run.beginning_time | date:'mediumTime'}}</li>
+      <li>Ending time: {{run.end_time | date:'mediumTime'}}</li>
+      <button class="waves-effect waves-light btn" ng-click="runs.goEdit(run)" type="button" name="edit_run">Edit</button>
+      <button class="waves-effect waves-light red btn" ng-click="runs.deleteRun(run)" type="button" name="delete_run">Delete</button>
+    </ul>
+  </div>
+</li>

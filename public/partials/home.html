@@ -17,8 +17,11 @@
   <div class="row" ng-if="home.currentUser" ng-controller="RunsController as runs">
     <div class="col s12 m6 l5 offset-m1 offset-l1">
       <ul class="collapsible" data-collapsible="accordion">
-        <li ng-repeat="run in runs.allRuns">
-          <div class="collapsible-header">Run on {{run.beginning_time | date:'mediumDate'}}</div>
+        <run-item run="run" ng-repeat="run in runs.allRuns">
+        </run-item>
+        <!-- <li run-item run="run" ng-repeat="run in runs.allRuns"> -->
+          <!-- <run-item run="run"></run-item> -->
+          <!-- <div class="collapsible-header">Run on {{run.beginning_time | date:'mediumDate'}}</div>
           <div class="collapsible-body">
             <ul>
               <li>You ran {{run.mileage}} miles</li>
@@ -28,8 +31,8 @@
               <button class="waves-effect waves-light btn" ng-click="runs.goEdit(run)" type="button" name="edit_run">Edit</button>
               <button class="waves-effect waves-light red btn" ng-click="runs.deleteRun(run)" type="button" name="delete_run">Delete</button>
             </ul>
-          </div>
-        </li>
+          </div> -->
+        <!-- </li> -->
       </ul>
       <div class="container">
         <button class="waves-effect waves-light btn" ui-sref="new_run" type="button" name="new_run">Start running now!</button>
